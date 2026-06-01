@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实用工具 | SUSHI.TOP - 寿司配比计算器与口味趣味测试</title>
+  <meta name="description" content="免费实用的寿司工具箱，包含寿司配比计算器（自动计算用餐人数对应的寿司米、水、醋等用量）和寿司口味趣味测试，5道题发现最适合你的寿司类型。">
+  <meta name="keywords" content="寿司配比计算器,寿司工具,寿司用量计算,寿司米计算,寿司口味测试,趣味测试,寿司类型测试">
+  <link rel="canonical" href="https://sushi.top/tools.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/sushi-logo.png" alt="SUSHI.TOP" class="logo-img">
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">☰</button>
+      <div class="search-box" onclick="openSearch()" style="cursor:pointer">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索寿司知识..." readonly style="cursor:pointer">
+      </div>
+      
+      <div class="translate-btn">
+        <button onclick="document.getElementById('translateMenu').classList.toggle('show')">🌐 翻译 ▾</button>
+        <div class="translate-menu" id="translateMenu">
+          <a href="#" onclick="translatePage('ja');return false;">日本語</a>
+          <a href="#" onclick="translatePage('en');return false;">English</a>
+          <a href="#" onclick="translatePage('es');return false;">Español</a>
+          <a href="#" onclick="translatePage('ko');return false;">한국어</a>
+          <a href="#" onclick="translatePage('fr');return false;">Français</a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="encyclopedia.html" class="nav-link">寿司百科</a>
+        <a href="tutorial.html" class="nav-link">寿司教程</a>
+        <a href="tools.html" class="nav-link active">实用工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="hero" style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">首页</a>
+          <span>/</span>
+          <span>实用工具</span>
+        </div>
+        <h1 class="hero-title">🛠️ 实用工具</h1>
+        <p class="hero-subtitle">轻量好用的免费寿司工具，无需注册，打开即用</p>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section">
+      <div class="container">
+        <div class="tools-layout">
+          
+          <!-- Calculator Tool -->
+          <div class="tool-section" id="calculator">
+            <div class="tool-section-title">
+              <span style="font-size: 1.5rem;">⚖️</span>
+              <div>
+                <h2>寿司配比计算器</h2>
+                <p class="text-muted mb-0" style="font-size: 0.85rem;">输入用餐人数，自动计算精准用量</p>
+              </div>
+            </div>
+            
+            <div class="calculator-form">
+              <div class="form-group">
+                <label for="personCount">用餐人数</label>
+                <input type="number" id="personCount" value="2" min="1" max="100" placeholder="请输入用餐人数（1-100人）">
+              </div>
+              
+              <div style="display: flex; gap: 1rem;">
+                <button type="button" id="calculateBtn" class="btn btn-primary" style="flex: 1;">
+                  🥢 开始计算
+                </button>
+                <button type="button" id="resetBtn" class="btn btn-secondary">
+                  🔄 重置
+                </button>
+              </div>
+            </div>
+
+            <div id="resultBox" class="result-box" style="display: none;">
+              <div id="resultGrid"></div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--cream); border-radius: 8px;">
+              <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">📋 参考配方（每人为基准）</h4>
+              <ul style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-muted);">
+                <li>• 寿司米：150g</li>
+                <li>• 水：180ml</li>
+                <li>• 寿司醋：30ml</li>
+                <li>• 砂糖：8g</li>
+                <li>• 盐：2g</li>
+                <li>• 海苔：2枚</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Quiz Tool -->
+          <div class="tool-section" id="quiz">
+            <div class="tool-section-title">
+              <span style="font-size: 1.5rem;">🎯</span>
+              <div>
+                <h2>寿司口味趣味测试</h2>
+                <p class="text-muted mb-0" style="font-size: 0.85rem;">5道趣味问题，发现你的专属寿司</p>
+              </div>
+            </div>
+            
+            <div class="quiz-container" id="quizContainer">
+              <div class="quiz-progress" id="quizProgress">
+                <div class="quiz-progress-bar">
+                  <div class="quiz-progress-fill" style="width: 0%"></div>
+                </div>
+                <span class="quiz-progress-text">1/5</span>
+              </div>
+              <div id="quizContent">
+                <!-- Quiz content will be rendered by JS -->
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1rem; background: var(--cream); border-radius: 8px;">
+              <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">✨ 测试说明</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">
+                根据您的口味偏好和生活习惯，通过5道简单的选择题，帮助您发现最适合自己风格的寿司类型。结果仅供娱乐参考。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Tips -->
+    <section class="section" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="encyclopedia-intro" style="max-width: 700px; margin: 0 auto;">
+          <h2>💬 分享与交流</h2>
+          <p>这些工具对您有帮助吗？您可以截图分享测试结果给朋友，也可以把计算器推荐给想在家做寿司的家人朋友。如果您有其他想添加的工具功能，欢迎通过留言反馈告诉我们！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="section">
+      <div class="container">
+        <div class="feedback-section">
+          <h3 class="feedback-title">💬 工具反馈 / 功能建议</h3>
+          <form class="feedback-form" onsubmit="handleFeedback(event)">
+            <input type="text" placeholder="您的称呼（选填）" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+            <textarea placeholder="关于工具，您有什么建议或问题？"></textarea>
+            <button type="submit" class="btn btn-primary">提交反馈</button>
+          </form>
+          <div class="feedback-list" id="feedbackList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="about.html">关于本站</a>
+        <a href="sitemap.html">站点地图</a>
+        <a href="privacy.html">隐私协议</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <p class="footer-copyright">© 2025 SUSHI.TOP 寿司百科 · 让寿司文化触手可及</p>
+    </div>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/quiz.js"></script>
+  <script>
+    function handleFeedback(e) {
+      e.preventDefault();
+      const form = e.target;
+      const inputs = form.querySelectorAll('input, textarea');
+      const content = inputs[1].value.trim();
+      const author = inputs[0].value.trim() || '匿名用户';
+      
+      if (!content) {
+        alert('请输入留言内容');
+        return;
+      }
+
+      const list = document.getElementById('feedbackList');
+      const item = document.createElement('div');
+      item.className = 'feedback-item';
+      item.innerHTML = `
+        <div class="feedback-item-header">
+          <span class="feedback-item-author">${author}</span>
+          <span class="feedback-item-time">刚刚</span>
+        </div>
+        <p class="feedback-item-content">${content}</p>
+      `;
+      
+      if (list.firstChild) {
+        list.insertBefore(item, list.firstChild);
+      } else {
+        list.appendChild(item);
+      }
+      
+      form.reset();
+      alert('感谢您的反馈！');
+    }
+
+    // Smooth scroll to tools
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Search Modal -->
+  <div id="search-modal" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal-inner">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="搜索寿司知识..." oninput="handleSearch(this.value)">
+        <button class="search-modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div id="search-results">
+        <div class="search-empty">输入关键词开始搜索</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    let pagefindSearch;
+    async function initPagefind() {
+      try {
+        pagefindSearch = await import("/pagefind/pagefind.js");
+      } catch(e) {
+        console.log("Pagefind not available, using fallback");
+      }
+    }
+    initPagefind();
+
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    async function handleSearch(query) {
+      const resultsDiv = document.getElementById('search-results');
+      if (!query.trim()) { resultsDiv.innerHTML = '<div class="search-empty">输入关键词开始搜索</div>'; return; }
+      if (pagefindSearch) {
+        try {
+          const search = await pagefindSearch.search(query);
+          const results = await Promise.all(search.results.slice(0,8).map(r => r.data()));
+          if (results.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-empty">未找到相关内容</div>';
+          } else {
+            resultsDiv.innerHTML = results.map(r => 
+              '<div class="pagefind-result"><h3><a href="' + r.url + '">' + (r.meta?.title || r.url) + '</a></h3><p>' + (r.sub_results?.map(s=>s.excerpt).join(' ... ') || '') + '</p></div>'
+            ).join('');
+          }
+        } catch(e) {
+          resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+        }
+      } else {
+        resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+      }
+    }
+    function translatePage(lang) {
+      const url = window.location.href;
+      const translateUrl = 'https://translate.google.com/translate?sl=zh-CN&tl=' + lang + '&u=' + encodeURIComponent(url);
+      window.open(translateUrl, '_blank');
+      document.getElementById('translateMenu').classList.remove('show');
+    }
+    // Close translate menu on outside click
+    document.addEventListener('click', function(e) {
+      const btn = document.querySelector('.translate-btn');
+      const menu = document.getElementById('translateMenu');
+      if (btn && menu && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

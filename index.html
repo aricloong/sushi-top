@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUSHI.TOP | 寿司百科 - 一站式寿司知识与工具平台</title>
+  <meta name="description" content="Sushi百科是专业的寿司知识平台，提供寿司品类大全、寿司食材指南、寿司制作教程、寿司配比计算器等实用工具，帮助您深入了解寿司文化，掌握寿司制作技巧。">
+  <meta name="keywords" content="寿司百科,寿司知识,寿司种类,寿司食材,寿司教程,寿司制作,寿司文化,日本料理,寿司配比计算器">
+  <meta name="author" content="SUSHI.TOP">
+  <link rel="canonical" href="https://sushi.top/">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/sushi-logo.png" alt="SUSHI.TOP" class="logo-img">
+      </a>
+      
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">☰</button>
+      
+      <div class="search-box" onclick="openSearch()" style="cursor:pointer">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索寿司知识..." readonly style="cursor:pointer">
+      </div>
+      
+      
+      <div class="translate-btn">
+        <button onclick="document.getElementById('translateMenu').classList.toggle('show')">🌐 翻译 ▾</button>
+        <div class="translate-menu" id="translateMenu">
+          <a href="#" onclick="translatePage('ja');return false;">日本語</a>
+          <a href="#" onclick="translatePage('en');return false;">English</a>
+          <a href="#" onclick="translatePage('es');return false;">Español</a>
+          <a href="#" onclick="translatePage('ko');return false;">한국어</a>
+          <a href="#" onclick="translatePage('fr');return false;">Français</a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">首页</a>
+        <a href="encyclopedia.html" class="nav-link">寿司百科</a>
+        <a href="tutorial.html" class="nav-link">寿司教程</a>
+        <a href="tools.html" class="nav-link">实用工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">🍣 SUSHI<span>.TOP</span> 寿司百科</h1>
+        <p class="hero-subtitle">一站式寿司知识与工具平台，探索日本寿司文化的精致与奥义</p>
+        <div class="hero-banner">
+          <p>🌟 欢迎来到专业的寿司百科网站，无论是了解寿司文化、种类，还是学习制作技巧，这里都能满足您的需求</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">🛠️ 在线工具</h2>
+        </div>
+        <div class="card-grid card-grid-3">
+          <div class="tool-card">
+            <div class="tool-card-icon">⚖️</div>
+            <h3 class="tool-card-title">寿司配比计算器</h3>
+            <p class="tool-card-desc">输入用餐人数，自动计算寿司米、水、醋等精准用量</p>
+            <a href="tools.html#calculator" class="tool-card-btn">立即使用 →</a>
+          </div>
+          <div class="tool-card">
+            <div class="tool-card-icon">🎯</div>
+            <h3 class="tool-card-title">寿司口味测试</h3>
+            <p class="tool-card-desc">5道趣味问题，发现最适合你的寿司类型</p>
+            <a href="tools.html#quiz" class="tool-card-btn">开始测试 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Sushi Types -->
+    <section class="section" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">🔥 热门寿司品类</h2>
+          <a href="encyclopedia.html#types" class="view-all">查看全部 →</a>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">🍣</div>
+            <h3 class="card-title">握寿司</h3>
+            <p class="card-desc">江户前寿司的代表，将醋饭与生鱼片用手捏合，是最经典的寿司形式</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🥒</div>
+            <h3 class="card-title">卷寿司</h3>
+            <p class="card-desc">用海苔包裹米饭和馅料，切成圆片，适合各种口味组合</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌯</div>
+            <h3 class="card-title">手卷寿司</h3>
+            <p class="card-desc">将海苔制成锥形，直接用手拿着吃，口感丰富有趣</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🦑</div>
+            <h3 class="card-title">军舰寿司</h3>
+            <p class="card-desc">用海苔条围成小船形状，盛放鱼籽、贝类等配料</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🍱</div>
+            <h3 class="card-title">散寿司</h3>
+            <p class="card-desc">将配料散放在寿司饭上，视觉华丽，口感丰富</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🍘</div>
+            <h3 class="card-title">稻荷寿司</h3>
+            <p class="card-desc">用油炸豆腐皮包裹寿司饭，咸甜可口</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🥟</div>
+            <h3 class="card-title">押寿司</h3>
+            <p class="card-desc">用模具压制成形的寿司，常见于关西地区</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🍤</div>
+            <h3 class="card-title">熟寿司</h3>
+            <p class="card-desc">经过发酵的古老寿司类型，带有独特的酸香风味</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tutorial Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">📚 新手教程</h2>
+          <a href="tutorial.html" class="view-all">查看全部 →</a>
+        </div>
+        <div class="card-grid card-grid-3">
+          <div class="tutorial-card">
+            <div class="tutorial-card-header">
+              <span class="tutorial-card-icon">🍚</span>
+              <div>
+                <h3 class="tutorial-card-title">寿司米的处理方法</h3>
+                <span class="tutorial-card-meta">基础知识 · 约5分钟</span>
+              </div>
+            </div>
+            <div class="tutorial-card-content">
+              <ul>
+                <li>如何挑选优质寿司米</li>
+                <li>正确的淘米和浸泡方法</li>
+                <li>煮饭的水米比例技巧</li>
+                <li>让米饭保持颗粒感的秘诀</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tutorial-card">
+            <div class="tutorial-card-header">
+              <span class="tutorial-card-icon">🍶</span>
+              <div>
+                <h3 class="tutorial-card-title">寿司醋的调制</h3>
+                <span class="tutorial-card-meta">调味技巧 · 约3分钟</span>
+              </div>
+            </div>
+            <div class="tutorial-card-content">
+              <ul>
+                <li>经典寿司醋配方比例</li>
+                <li>如何调整酸甜度</li>
+                <li>寿司醋的保存方法</li>
+                <li>替代方案的推荐</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tutorial-card">
+            <div class="tutorial-card-header">
+              <span class="tutorial-card-icon">✋</span>
+              <div>
+                <h3 class="tutorial-card-title">握寿司手法</h3>
+                <span class="tutorial-card-meta">核心技能 · 约10分钟</span>
+              </div>
+            </div>
+            <div class="tutorial-card-content">
+              <ul>
+                <li>正确的手部温度控制</li>
+                <li>米饭的取量和塑形</li>
+                <li>如何避免米饭散开</li>
+                <li>专业师傅的握制技巧</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" style="background: var(--cream);">
+      <div class="container">
+        <div class="encyclopedia-intro">
+          <h2>🍣 关于 SUSHI.TOP</h2>
+          <p>SUSHI.TOP 致力于传播正宗的日本寿司文化，为寿司爱好者提供全面、专业的知识平台。无论是想了解寿司历史的文化探索者，还是希望在家制作寿司的烹饪爱好者，这里都能找到您需要的内容。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="about.html">关于本站</a>
+        <a href="sitemap.html">站点地图</a>
+        <a href="privacy.html">隐私协议</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <p class="footer-copyright">© 2025 SUSHI.TOP 寿司百科 · 让寿司文化触手可及</p>
+    </div>
+  </footer>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/quiz.js"></script>
+
+  <!-- Search Modal -->
+  <div id="search-modal" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal-inner">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="搜索寿司知识..." oninput="handleSearch(this.value)">
+        <button class="search-modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div id="search-results">
+        <div class="search-empty">输入关键词开始搜索</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    let pagefindSearch;
+    async function initPagefind() {
+      try {
+        pagefindSearch = await import("/pagefind/pagefind.js");
+      } catch(e) {
+        console.log("Pagefind not available, using fallback");
+      }
+    }
+    initPagefind();
+
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    async function handleSearch(query) {
+      const resultsDiv = document.getElementById('search-results');
+      if (!query.trim()) { resultsDiv.innerHTML = '<div class="search-empty">输入关键词开始搜索</div>'; return; }
+      if (pagefindSearch) {
+        try {
+          const search = await pagefindSearch.search(query);
+          const results = await Promise.all(search.results.slice(0,8).map(r => r.data()));
+          if (results.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-empty">未找到相关内容</div>';
+          } else {
+            resultsDiv.innerHTML = results.map(r => 
+              '<div class="pagefind-result"><h3><a href="' + r.url + '">' + (r.meta?.title || r.url) + '</a></h3><p>' + (r.sub_results?.map(s=>s.excerpt).join(' ... ') || '') + '</p></div>'
+            ).join('');
+          }
+        } catch(e) {
+          resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+        }
+      } else {
+        resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+      }
+    }
+    function translatePage(lang) {
+      const url = window.location.href;
+      const translateUrl = 'https://translate.google.com/translate?sl=zh-CN&tl=' + lang + '&u=' + encodeURIComponent(url);
+      window.open(translateUrl, '_blank');
+      document.getElementById('translateMenu').classList.remove('show');
+    }
+    // Close translate menu on outside click
+    document.addEventListener('click', function(e) {
+      const btn = document.querySelector('.translate-btn');
+      const menu = document.getElementById('translateMenu');
+      if (btn && menu && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 | SUSHI.TOP</title>
+  <meta name="description" content="联系我们 - SUSHI.TOP 寿司百科">
+  <link rel="canonical" href="https://sushi.top/contact.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/sushi-logo.png" alt="SUSHI.TOP" class="logo-img">
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">☰</button>
+      <div class="search-box" onclick="openSearch()" style="cursor:pointer">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索寿司知识..." readonly style="cursor:pointer">
+      </div>
+      <div class="translate-btn">
+        <button onclick="document.getElementById('translateMenu').classList.toggle('show')">🌐 翻译 ▾</button>
+        <div class="translate-menu" id="translateMenu">
+          <a href="#" onclick="translatePage('ja');return false;">日本語</a>
+          <a href="#" onclick="translatePage('en');return false;">English</a>
+          <a href="#" onclick="translatePage('es');return false;">Español</a>
+          <a href="#" onclick="translatePage('ko');return false;">한국어</a>
+          <a href="#" onclick="translatePage('fr');return false;">Français</a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="encyclopedia.html" class="nav-link">寿司百科</a>
+        <a href="tutorial.html" class="nav-link">寿司教程</a>
+        <a href="tools.html" class="nav-link">实用工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">首页</a>
+          <span>/</span>
+          <span>联系我们</span>
+        </div>
+        <h1 class="hero-title" style="font-size:1.75rem;">联系我们</h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        
+<div class="encyclopedia-intro" style="text-align:left;">
+  <h2>📬 联系我们</h2>
+  <p>感谢您对 SUSHI.TOP 的关注！如有任何问题、建议或合作意向，欢迎通过以下方式与我们取得联系。</p>
+</div>
+
+<div class="category-section">
+  <h3>📧 电子邮件</h3>
+  <p>如需内容合作、错误反馈或商务咨询，请发送邮件至：</p>
+  <p style="font-size:1.1rem;"><strong>contact@sushi.top</strong></p>
+  <p class="text-muted">（此邮箱为占位信息，请替换为实际联系方式）</p>
+</div>
+
+<div class="category-section">
+  <h3>💬 内容贡献</h3>
+  <p>我们欢迎以下类型的内容贡献：</p>
+  <ul style="padding-left:1.5rem;margin-bottom:1rem;">
+    <li>寿司品类或食材的补充介绍</li>
+    <li>原创寿司制作教程或食谱</li>
+    <li>寿司文化相关的深度文章</li>
+    <li>网站功能改进建议</li>
+    <li>内容纠错与事实核查</li>
+  </ul>
+</div>
+
+<div class="category-section">
+  <h3>🐛 问题反馈</h3>
+  <p>如果您发现网站存在以下问题，请及时告知我们：</p>
+  <ul style="padding-left:1.5rem;margin-bottom:1rem;">
+    <li>页面显示异常或链接失效</li>
+    <li>内容错误或不准确</li>
+    <li>功能无法正常使用</li>
+    <li>其他用户体验问题</li>
+  </ul>
+</div>
+
+<div class="category-section">
+  <h3>🤝 商务合作</h3>
+  <p>如果您是寿司餐厅、食材供应商、厨具品牌或相关机构，希望与我们开展合作，请通过邮件联系并注明"商务合作"。</p>
+</div>
+
+<div class="category-section">
+  <div class="encyclopedia-intro" style="text-align:center;margin-top:2rem;">
+    <p>🍣 期待与您的交流，让寿司文化触达更多人！</p>
+  </div>
+</div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="about.html">关于本站</a>
+        <a href="sitemap.html">站点地图</a>
+        <a href="privacy.html">隐私协议</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <p class="footer-copyright">© 2025 SUSHI.TOP 寿司百科 · 让寿司文化触手可及</p>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div id="search-modal" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal-inner">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="搜索寿司知识..." oninput="handleSearch(this.value)">
+        <button class="search-modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div id="search-results">
+        <div class="search-empty">输入关键词开始搜索</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    let pagefindSearch;
+    async function initPagefind() {
+      try {
+        pagefindSearch = await import("/pagefind/pagefind.js");
+      } catch(e) {
+        console.log("Pagefind not available");
+      }
+    }
+    initPagefind();
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    async function handleSearch(query) {
+      const resultsDiv = document.getElementById('search-results');
+      if (!query.trim()) { resultsDiv.innerHTML = '<div class="search-empty">输入关键词开始搜索</div>'; return; }
+      if (pagefindSearch) {
+        try {
+          const search = await pagefindSearch.search(query);
+          const results = await Promise.all(search.results.slice(0,8).map(r => r.data()));
+          if (results.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-empty">未找到相关内容</div>';
+          } else {
+            resultsDiv.innerHTML = results.map(r =>
+              '<div class="pagefind-result"><h3><a href="' + r.url + '">' + (r.meta?.title || r.url) + '</a></h3><p>' + (r.sub_results?.map(s=>s.excerpt).join(' ... ') || '') + '</p></div>'
+            ).join('');
+          }
+        } catch(e) {
+          resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+        }
+      } else {
+        resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+      }
+    }
+    function translatePage(lang) {
+      const url = window.location.href;
+      const translateUrl = 'https://translate.google.com/translate?sl=zh-CN&tl=' + lang + '&u=' + encodeURIComponent(url);
+      window.open(translateUrl, '_blank');
+      document.getElementById('translateMenu').classList.remove('show');
+    }
+    document.addEventListener('click', function(e) {
+      const btn = document.querySelector('.translate-btn');
+      const menu = document.getElementById('translateMenu');
+      if (btn && menu && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

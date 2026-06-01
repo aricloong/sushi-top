@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寿司百科 | SUSHI.TOP - 寿司种类、食材、文化与专业术语</title>
+  <meta name="description" content="专业的寿司百科全书，涵盖寿司品类大全、寿司食材指南、寿司文化冷知识、专业名词释义等丰富内容，深入了解日本寿司文化的精髓。">
+  <meta name="keywords" content="寿司百科,寿司种类,寿司分类,握寿司,卷寿司,军舰寿司,寿司食材,海苔,三文鱼,金枪鱼,寿司文化,舍利,寿司术语">
+  <link rel="canonical" href="https://sushi.top/encyclopedia.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/sushi-logo.png" alt="SUSHI.TOP" class="logo-img">
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">☰</button>
+      <div class="search-box" onclick="openSearch()" style="cursor:pointer">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索寿司知识..." readonly style="cursor:pointer">
+      </div>
+      
+      <div class="translate-btn">
+        <button onclick="document.getElementById('translateMenu').classList.toggle('show')">🌐 翻译 ▾</button>
+        <div class="translate-menu" id="translateMenu">
+          <a href="#" onclick="translatePage('ja');return false;">日本語</a>
+          <a href="#" onclick="translatePage('en');return false;">English</a>
+          <a href="#" onclick="translatePage('es');return false;">Español</a>
+          <a href="#" onclick="translatePage('ko');return false;">한국어</a>
+          <a href="#" onclick="translatePage('fr');return false;">Français</a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="encyclopedia.html" class="nav-link active">寿司百科</a>
+        <a href="tutorial.html" class="nav-link">寿司教程</a>
+        <a href="tools.html" class="nav-link">实用工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="hero" style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">首页</a>
+          <span>/</span>
+          <span>寿司百科</span>
+        </div>
+        <h1 class="hero-title">🍣 寿司百科</h1>
+        <p class="hero-subtitle">从寿司品类到文化历史，从食材指南到专业术语，一站式了解寿司的一切</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <div class="encyclopedia-intro">
+          <h2>📖 寿司入门导览</h2>
+          <p>寿司是日本饮食文化中最具代表性的美食之一，起源于东南亚，历经千年演变发展至今。本文将带您系统了解寿司的各大品类、常用食材、文化背景以及专业术语，帮助您成为真正的寿司达人。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Sushi Types -->
+    <section class="section" id="types" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">🍣</div>
+            <div>
+              <h2>寿司品类大全</h2>
+              <p class="text-muted mb-0">了解各种寿司类型的特点与区别</p>
+            </div>
+          </div>
+          <div class="item-list">
+            <div class="item-card">
+              <h4>🍣 握寿司（Nigiri-zushi）</h4>
+              <p>将醋饭握成椭圆形，上面放置生鱼片或其他海鲜。是最经典、最传统的寿司形式，起源于江户（东京）。握寿司强调食材的新鲜度和师傅的手艺。</p>
+            </div>
+            <div class="item-card">
+              <h4>🥒 卷寿司（Maki-zushi）</h4>
+              <p>用海苔包裹米饭和馅料，卷成圆筒后切成小段。根据大小分为细卷（直径约2cm）、中卷和粗卷。馅料丰富多样，是最常见的寿司类型。</p>
+            </div>
+            <div class="item-card">
+              <h4>🌯 手卷寿司（Temaki）</h4>
+              <p>将海苔切成半圆形，用手卷成锥形漏斗状，内装米饭和各类馅料。适合直接用手拿着吃，口感丰富有趣，是年轻人喜爱的寿司形式。</p>
+            </div>
+            <div class="item-card">
+              <h4>🦑 军舰寿司（Gunkan-maki）</h4>
+              <p>用海苔条围成小船形状，上面盛放鱼籽、贝类、海胆等软性或颗粒状配料。军舰寿司的名称来源于其独特的船形外观。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍱 散寿司（Chirashi-zushi）</h4>
+              <p>将各种配料如生鱼片、蛋丝、蔬菜等散放在寿司饭上，又称"花园寿司"。视觉华丽，适合家庭制作或庆祝场合。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍘 稻荷寿司（Inari-zushi）</h4>
+              <p>用油炸豆腐皮（aburaage）包裹调味后的寿司饭，味道咸甜可口。是日本便利店常见的寿司类型，也是供奉稻荷神明的供品。</p>
+            </div>
+            <div class="item-card">
+              <h4>🥟 押寿司（Oshi-zushi）</h4>
+              <p>又称"箱押寿司"，使用木盒模具将寿司饭和配料压制成形。常见于关西地区，外形方正，可以保存较长时间。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍤 熟寿司（Nare-zushi）</h4>
+              <p>最古老的寿司形式，用米饭发酵鱼鲜数周至数月，带有独特的酸香味。现在主要在京都等地作为传统美食保留。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Ingredients -->
+    <section class="section" id="ingredients">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">🥬</div>
+            <div>
+              <h2>寿司食材百科</h2>
+              <p class="text-muted mb-0">认识制作寿司所需的各种食材</p>
+            </div>
+          </div>
+          
+          <h3 class="mb-2">🍚 基础食材</h3>
+          <div class="item-list">
+            <div class="item-card">
+              <h4>🍚 寿司米</h4>
+              <p><strong>推荐品种：</strong>越光米（Koshihikari）、一见钟情米（Hitomebore）。寿司米应选择直链淀粉含量适中、黏性适度的品种。</p>
+              <p><strong>选购要点：</strong>颗粒饱满有光泽，无碎米杂质，产自日本或东北地区更佳。</p>
+            </div>
+            <div class="item-card">
+              <h4>🥬 海苔（Nori）</h4>
+              <p><strong>等级分类：</strong>按烘烤程度和品质分为特上、上、A、B等级。品质好的海苔色泽深绿有光泽，无杂质。</p>
+              <p><strong>选购要点：</strong>选择厚薄均匀、质地脆硬、带有淡淡海洋香气的产品。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍶 寿司醋</h4>
+              <p><strong>主要成分：</strong>米醋、糖、盐按一定比例混合。好的寿司醋酸度适中，甜酸平衡。</p>
+              <p><strong>自制配方：</strong>米醋100ml + 砂糖30g + 盐10g，小火加热至糖盐溶解。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍋 调味料</h4>
+              <p><strong>酱油：</strong>选择鲜酱油或专门寿司酱油，颜色淡、味道鲜。</p>
+              <p><strong>芥末/山葵：</strong>真山葵（wasabi）辛辣温和，人工芥末味道刺激。注意区分。</p>
+            </div>
+          </div>
+
+          <h3 class="mb-2 mt-3">🐟 鱼生海鲜</h3>
+          <div class="item-list">
+            <div class="item-card">
+              <h4>🍣 三文鱼（Salmon）</h4>
+              <p><strong>特点：</strong>橙红色鱼肉，脂肪含量高，口感丰腴鲜美，是最受全球欢迎的寿司食材。</p>
+              <p><strong>选购要点：</strong>色泽鲜艳有光泽，肉质紧实有弹性，无异味。推荐选择养殖或深海野生品种。</p>
+            </div>
+            <div class="item-card">
+              <h4>🐟 金枪鱼（Tuna/Maguro）</h4>
+              <p><strong>部位分类：</strong>赤身（瘦肉）、中腹（fatty tuna）、大腹（otoro，脂肪最多）。</p>
+              <p><strong>选购要点：</strong>色泽鲜红或粉红，脂肪分布均匀，有清新的海洋香气。</p>
+            </div>
+            <div class="item-card">
+              <h4>🐠 鲷鱼（Sea Bream）</h4>
+              <p><strong>特点：</strong>白肉鱼的代表，味道清淡鲜甜，口感紧实。在日本被视为吉祥的象征。</p>
+              <p><strong>选购要点：</strong>鱼肉呈淡粉色或白色，表面有自然光泽，无腥味。</p>
+            </div>
+            <div class="item-card">
+              <h4>🦐 甜虾（Sweet Shrimp）</h4>
+              <p><strong>特点：</strong>体型较小，味道清甜，口感软糯带点黏性。</p>
+              <p><strong>选购要点：</strong>外壳完整呈半透明状，肉质饱满有弹性，闻起来有淡淡甜味。</p>
+            </div>
+            <div class="item-card">
+              <h4>🐙 章鱼（Octopus）</h4>
+              <p><strong>特点：</strong>肉质Q弹有嚼劲，需要经过充分捶打和调味才能用于寿司。</p>
+              <p><strong>选购要点：</strong>色泽自然，无异味，触感有弹性。</p>
+            </div>
+            <div class="item-card">
+              <h4>🐚 贝类</h4>
+              <p><strong>常见品种：</strong>扇贝、蛤蜊、鲍鱼、赤贝等。味道鲜美，口感各异。</p>
+              <p><strong>选购要点：</strong>贝壳完整紧闭或有正常闭合反应，无腐败气味。</p>
+            </div>
+            <div class="item-card">
+              <h4>🌟 海胆（Uni）</h4>
+              <p><strong>特点：</strong>海胆的生殖腺，呈橙黄色，味道浓郁鲜美，是高端寿司食材。</p>
+              <p><strong>选购要点：</strong>颜色鲜亮呈橙黄色，颗粒完整饱满，无苦涩味。</p>
+            </div>
+            <div class="item-card">
+              <h4>🥚 鱼籽</h4>
+              <p><strong>常见品种：</strong>飞鱼籽（tobiko）、三文鱼籽（ikura）、明太子等。</p>
+              <p><strong>选购要点：</strong>颗粒饱满有光泽，颜色自然均匀，无腥臭味。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Culture -->
+    <section class="section" id="culture" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">📚</div>
+            <div>
+              <h2>寿司文化冷知识</h2>
+              <p class="text-muted mb-0">深入了解寿司背后的历史与文化</p>
+            </div>
+          </div>
+          <div class="item-list">
+            <div class="item-card">
+              <h4>🏛️ 寿司的起源</h4>
+              <p>寿司最早起源于东南亚的发酵鱼料理，距今已有约2000年历史。最早的"寿司"（nare-zushi）是以米饭发酵保存鱼鲜的方法，寿司饭最初是用来发酵的载体，并非食用部分。</p>
+            </div>
+            <div class="item-card">
+              <h4>🏯 江户前寿司</h4>
+              <p>"江户前"原指东京湾（江户城前）捕获的海鲜，后演变为东京风格握寿司的代名词。江户前寿司强调当场握制、立即食用，追求食材的极致新鲜。</p>
+            </div>
+            <div class="item-card">
+              <h4>👨‍🍳 寿司之神</h4>
+              <p>小野二郎（1919-2024）是被誉为"寿司之神"的传奇人物，其位于东京银座的"数寄屋桥次郎"连续多年获得米其林三星评价。他一生专注于寿司制作，直到90多岁仍在不断精进技艺。</p>
+            </div>
+            <div class="item-card">
+              <h4>🔄 回转寿司的发明</h4>
+              <p>回转寿司（kaiten-zushi）由白石义明于1958年在大阪发明。最初是为了解决寿司店人手不足的问题，没想到大受欢迎，最终风靡全球，成为平价寿司的代名词。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍽️ 寿司礼仪</h4>
+              <p>品尝寿司时的礼仪：①用手拿着吃比筷子更传统；②芥末应放在酱油中而非直接点在鱼生上；③寿司应一口吃下；④姜片用于清洁味蕾而非配寿司吃；⑤避免将米饭蘸入酱油。</p>
+            </div>
+            <div class="item-card">
+              <h4>🍣 寿司与性别</h4>
+              <p>在传统日本寿司店，曾有"女难"的禁忌说法，认为女性体温较高会影响鱼生新鲜度。但现代科学证明这一说法并无依据，如今女性寿司师傅（tsума）越来越常见。</p>
+            </div>
+            <div class="item-card">
+              <h4>🎌 寿司职人文化</h4>
+              <p>成为合格的寿司师傅（寿司职人/shokunin）通常需要10年以上的严格训练，包括米饭处理、刀工、调味、捏制等各个环节，每个细节都追求极致。</p>
+            </div>
+            <div class="item-card">
+              <h4>🌍 寿司的全球化</h4>
+              <p>寿司从日本走向世界的标志性事件包括：1960年代加州卷的发明（迎合西方人口味）、1970年代后回转寿司的普及、2000年后寿司在全球范围内的流行，如今已成为世界公认的健康美食。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Terminology -->
+    <section class="section" id="terms">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">📖</div>
+            <div>
+              <h2>寿司专业术语</h2>
+              <p class="text-muted mb-0">掌握这些日语术语，秒变寿司达人</p>
+            </div>
+          </div>
+          <div class="term-grid">
+            <div class="term-card">
+              <div class="term-japanese">舎利（しゃり）</div>
+              <div class="term-reading">Shari - 醋饭</div>
+              <div class="term-meaning">寿司中使用的调味醋饭，是寿司的"灵魂"。优秀的舎利应该颗粒分明、酸甜适度。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">種（だね）</div>
+              <div class="term-reading">Tane - 配料</div>
+              <div class="term-meaning">放置在寿司饭上的鱼生或其他配料的总称。如"タンの種"（金枪鱼配料）。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">握り（にぎり）</div>
+              <div class="term-reading">Nigiri - 握寿司</div>
+              <div class="term-meaning">用手握制而成的寿司，是最经典的寿司形式。日语简称"握"或"握り"。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">巻き（まき）</div>
+              <div class="term-reading">Maki - 卷寿司</div>
+              <div class="term-meaning">用海苔包裹的寿司，根据直径分为太巻き（大卷）和細巻き（小卷）。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">軍艦（ぐんかん）</div>
+              <div class="term-reading">Gunkan - 军舰寿司</div>
+              <div class="term-meaning">用海苔围成船形的寿司，上面放置鱼籽、海胆等配料。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">ガリ</div>
+              <div class="term-reading">Gari - 腌姜片</div>
+              <div class="term-meaning">甜醋腌制的姜片，用于清洁味蕾，在不同寿司之间食用。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">一貫（いっかん）</div>
+              <div class="term-reading">Ikkkan - 一贯</div>
+              <div class="term-meaning">一个握寿司的单位。在高级寿司店，通常按"一贯"来点单。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">ツマ</div>
+              <div class="term-reading">Tsuma - 装饰配菜</div>
+              <div class="term-meaning">装饰用的蔬菜，如萝卜丝、紫苏叶等，用于点缀和增味。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">醤油（しょうゆ）</div>
+              <div class="term-reading">Shoyu - 酱油</div>
+              <div class="term-meaning">寿司蘸料，分为浓口和淡口两种，有些高级店会使用特制调配酱油。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">山葵（わさび）</div>
+              <div class="term-reading">Wasabi - 山葵/芥末</div>
+              <div class="term-meaning">用山葵根部磨制的辛辣调味料，正确的用法是溶于酱油中。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">中落ち（なかおち）</div>
+              <div class="term-reading">Nakaochi - 中落ち</div>
+              <div class="term-meaning">从骨头剔下的鱼肉碎，可用于军舰寿司或散寿司。</div>
+            </div>
+            <div class="term-card">
+              <div class="term-japanese">貫（かん）</div>
+              <div class="term-reading">Kan - 贯</div>
+              <div class="term-meaning">寿司的数量单位，与"一貫"相同，表示一个握寿司。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="section" style="background: var(--cream);">
+      <div class="container">
+        <div class="feedback-section">
+          <h3 class="feedback-title">💬 留言提问 / 内容纠错</h3>
+          <form class="feedback-form" onsubmit="handleFeedback(event)">
+            <input type="text" placeholder="您的称呼（选填）" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+            <textarea placeholder="如果您有关于寿司知识的问题，或发现内容有误，请在此留言..."></textarea>
+            <button type="submit" class="btn btn-primary">提交反馈</button>
+          </form>
+          <div class="feedback-list" id="feedbackList">
+            <!-- 用户反馈将通过JS动态加载 -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="about.html">关于本站</a>
+        <a href="sitemap.html">站点地图</a>
+        <a href="privacy.html">隐私协议</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <p class="footer-copyright">© 2025 SUSHI.TOP 寿司百科 · 让寿司文化触手可及</p>
+    </div>
+  </footer>
+
+  <script>
+    // 简单的留言功能
+    function handleFeedback(e) {
+      e.preventDefault();
+      const form = e.target;
+      const inputs = form.querySelectorAll('input, textarea');
+      const content = inputs[1].value.trim();
+      const author = inputs[0].value.trim() || '匿名用户';
+      
+      if (!content) {
+        alert('请输入留言内容');
+        return;
+      }
+
+      const list = document.getElementById('feedbackList');
+      const item = document.createElement('div');
+      item.className = 'feedback-item';
+      item.innerHTML = `
+        <div class="feedback-item-header">
+          <span class="feedback-item-author">${author}</span>
+          <span class="feedback-item-time">刚刚</span>
+        </div>
+        <p class="feedback-item-content">${content}</p>
+      `;
+      
+      if (list.firstChild) {
+        list.insertBefore(item, list.firstChild);
+      } else {
+        list.appendChild(item);
+      }
+      
+      form.reset();
+      alert('感谢您的反馈！');
+    }
+  </script>
+
+  <!-- Search Modal -->
+  <div id="search-modal" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal-inner">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="搜索寿司知识..." oninput="handleSearch(this.value)">
+        <button class="search-modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div id="search-results">
+        <div class="search-empty">输入关键词开始搜索</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    let pagefindSearch;
+    async function initPagefind() {
+      try {
+        pagefindSearch = await import("/pagefind/pagefind.js");
+      } catch(e) {
+        console.log("Pagefind not available, using fallback");
+      }
+    }
+    initPagefind();
+
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    async function handleSearch(query) {
+      const resultsDiv = document.getElementById('search-results');
+      if (!query.trim()) { resultsDiv.innerHTML = '<div class="search-empty">输入关键词开始搜索</div>'; return; }
+      if (pagefindSearch) {
+        try {
+          const search = await pagefindSearch.search(query);
+          const results = await Promise.all(search.results.slice(0,8).map(r => r.data()));
+          if (results.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-empty">未找到相关内容</div>';
+          } else {
+            resultsDiv.innerHTML = results.map(r => 
+              '<div class="pagefind-result"><h3><a href="' + r.url + '">' + (r.meta?.title || r.url) + '</a></h3><p>' + (r.sub_results?.map(s=>s.excerpt).join(' ... ') || '') + '</p></div>'
+            ).join('');
+          }
+        } catch(e) {
+          resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+        }
+      } else {
+        resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+      }
+    }
+    function translatePage(lang) {
+      const url = window.location.href;
+      const translateUrl = 'https://translate.google.com/translate?sl=zh-CN&tl=' + lang + '&u=' + encodeURIComponent(url);
+      window.open(translateUrl, '_blank');
+      document.getElementById('translateMenu').classList.remove('show');
+    }
+    // Close translate menu on outside click
+    document.addEventListener('click', function(e) {
+      const btn = document.querySelector('.translate-btn');
+      const menu = document.getElementById('translateMenu');
+      if (btn && menu && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>

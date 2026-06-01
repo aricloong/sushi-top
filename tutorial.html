@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>寿司教程 | SUSHI.TOP - 零基础寿司制作入门与家常食谱</title>
+  <meta name="description" content="专业的寿司制作教程，包含寿司米处理、寿司醋调制、握寿司手法等新手入门指南，以及三文鱼握寿司、加州卷等家常寿司食谱，适合零基础学习。">
+  <meta name="keywords" content="寿司教程,寿司制作,寿司做法,寿司米,寿司醋,握寿司手法,三文鱼寿司,加州卷,手卷寿司,稻荷寿司,家常寿司">
+  <link rel="canonical" href="https://sushi.top/tutorial.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/sushi-logo.png" alt="SUSHI.TOP" class="logo-img">
+      </a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">☰</button>
+      <div class="search-box" onclick="openSearch()" style="cursor:pointer">
+        <span>🔍</span>
+        <input type="text" placeholder="搜索寿司知识..." readonly style="cursor:pointer">
+      </div>
+      
+      <div class="translate-btn">
+        <button onclick="document.getElementById('translateMenu').classList.toggle('show')">🌐 翻译 ▾</button>
+        <div class="translate-menu" id="translateMenu">
+          <a href="#" onclick="translatePage('ja');return false;">日本語</a>
+          <a href="#" onclick="translatePage('en');return false;">English</a>
+          <a href="#" onclick="translatePage('es');return false;">Español</a>
+          <a href="#" onclick="translatePage('ko');return false;">한국어</a>
+          <a href="#" onclick="translatePage('fr');return false;">Français</a>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">首页</a>
+        <a href="encyclopedia.html" class="nav-link">寿司百科</a>
+        <a href="tutorial.html" class="nav-link active">寿司教程</a>
+        <a href="tools.html" class="nav-link">实用工具</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="hero" style="padding: 2.5rem 0;">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">首页</a>
+          <span>/</span>
+          <span>寿司教程</span>
+        </div>
+        <h1 class="hero-title">📚 寿司教程</h1>
+        <p class="hero-subtitle">从零开始在家制作美味寿司，无需专业设备也能做出地道风味</p>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="section">
+      <div class="container">
+        <div class="encyclopedia-intro">
+          <h2>🍳 开始您的寿司之旅</h2>
+          <p>很多人认为制作寿司需要专业的技术和设备，其实不然。本教程专门为家庭烹饪设计，用最常见的厨具和食材，教您做出美味的家常寿司。无论是寿司新手还是想提升技巧的爱好者，都能在这里找到有价值的内容。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Beginner Guide -->
+    <section class="section" id="beginner" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">🌱</div>
+            <div>
+              <h2>新手入门</h2>
+              <p class="text-muted mb-0">掌握这些基础技能，开启寿司制作之路</p>
+            </div>
+          </div>
+          <div class="card-grid card-grid-3">
+            <div class="tutorial-card">
+              <div class="tutorial-card-header">
+                <span class="tutorial-card-icon">🍚</span>
+                <div>
+                  <h3 class="tutorial-card-title">寿司米的处理方法</h3>
+                  <span class="tutorial-card-meta">基础技能 · 约5分钟</span>
+                </div>
+              </div>
+              <div class="tutorial-card-content">
+                <ul>
+                  <li><strong>选米：</strong>推荐使用日本产越光米或一见钟情米，也可选择国产优质粳米</li>
+                  <li><strong>淘米：</strong>加入清水轻轻揉搓，换水重复3-4次，直到水基本清澈</li>
+                  <li><strong>浸泡：</strong>淘净后加水浸泡30分钟，让米粒充分吸收水分</li>
+                  <li><strong>煮饭：</strong>水米比例约1:1.1，用电饭煲或普通锅煮熟</li>
+                  <li><strong>要点：</strong>不要过度淘米，避免营养流失</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tutorial-card">
+              <div class="tutorial-card-header">
+                <span class="tutorial-card-icon">🍶</span>
+                <div>
+                  <h3 class="tutorial-card-title">寿司醋的调制与使用</h3>
+                  <span class="tutorial-card-meta">调味技能 · 约3分钟</span>
+                </div>
+              </div>
+              <div class="tutorial-card-content">
+                <ul>
+                  <li><strong>基础配方：</strong>米醋100ml + 砂糖30g + 盐10g</li>
+                  <li><strong>调制方法：</strong>小火加热至糖盐完全溶解，放凉备用</li>
+                  <li><strong>拌醋时机：</strong>米饭煮熟后趁热拌入，边拌边扇风</li>
+                  <li><strong>用量：</strong>约每300g米饭用30ml寿司醋</li>
+                  <li><strong>口感调整：</strong>偏酸加糖，偏甜加醋，灵活掌握</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tutorial-card">
+              <div class="tutorial-card-header">
+                <span class="tutorial-card-icon">✋</span>
+                <div>
+                  <h3 class="tutorial-card-title">握寿司的基本手法</h3>
+                  <span class="tutorial-card-meta">核心技能 · 约10分钟</span>
+                </div>
+              </div>
+              <div class="tutorial-card-content">
+                <ul>
+                  <li><strong>手部准备：</strong>用清水沾湿双手，防止米饭粘连</li>
+                  <li><strong>取饭量：</strong>约15-20g米饭，握成椭圆形</li>
+                  <li><strong>握制力度：</strong>轻柔均匀，不要过度挤压，保持松软口感</li>
+                  <li><strong>整形：</strong>双手交替轻轻滚动，使表面光滑</li>
+                  <li><strong>放配料：</strong>将鱼生放在饭团上，轻轻按压固定</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tutorial-card">
+              <div class="tutorial-card-header">
+                <span class="tutorial-card-icon">🥬</span>
+                <div>
+                  <h3 class="tutorial-card-title">海苔的选择与处理</h3>
+                  <span class="tutorial-card-meta">材料知识 · 约3分钟</span>
+                </div>
+              </div>
+              <div class="tutorial-card-content">
+                <ul>
+                  <li><strong>类型选择：</strong>卷寿司用烤海苔，手卷用原味海苔</li>
+                  <li><strong>品质判断：</strong>色泽深绿有光泽，质地脆硬无杂质</li>
+                  <li><strong>保存方法：</strong>放入密封袋冷冻保存，使用前取出回温</li>
+                  <li><strong>裁剪技巧：</strong>用剪刀按需裁剪，卷寿司约19cm宽</li>
+                  <li><strong>变软处理：</strong>如海苔变软，可放烤箱低温烘烤恢复</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="tutorial-card">
+              <div class="tutorial-card-header">
+                <span class="tutorial-card-icon">🔪</span>
+                <div>
+                  <h3 class="tutorial-card-title">鱼生的处理与切法</h3>
+                  <span class="tutorial-card-meta">刀工技能 · 约5分钟</span>
+                </div>
+              </div>
+              <div class="tutorial-card-content">
+                <ul>
+                  <li><strong>选购：</strong>选择寿司专用生鱼片，确保新鲜度</li>
+                  <li><strong>切割：</strong>顺着纹理斜切，厚度约5-8mm</li>
+                  <li><strong>大小：</strong>覆盖饭团时两端略露出</li>
+                  <li><strong>温度：</strong>冷藏取出后在室温放置5分钟，口感更佳</li>
+                  <li><strong>安全：</strong>务必使用新鲜且适合生食的食材</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Recipes -->
+    <section class="section" id="recipes">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">🍱</div>
+            <div>
+              <h2>家常寿司食谱</h2>
+              <p class="text-muted mb-0">精选经典家常寿司食谱，简单易学又美味</p>
+            </div>
+          </div>
+          <div class="card-grid card-grid-3">
+            <!-- Recipe 1 -->
+            <div class="recipe-card">
+              <div class="recipe-card-body">
+                <div class="recipe-card-emoji">🍣</div>
+                <h3>三文鱼握寿司</h3>
+                <p class="text-muted">经典中的经典，肉质细腻鲜美</p>
+                
+                <div class="recipe-ingredients">
+                  <h4>📝 材料</h4>
+                  <ul>
+                    <li>寿司米 150g</li>
+                    <li>三文鱼刺身 50g</li>
+                    <li>寿司醋 30ml</li>
+                    <li>酱油 少许</li>
+                    <li>芥末 适量</li>
+                  </ul>
+                </div>
+
+                <h4>👨‍🍳 步骤</h4>
+                <ol class="recipe-steps">
+                  <li>将寿司米洗净浸泡30分钟，加水煮熟</li>
+                  <li>趁热拌入寿司醋，用扇子扇风至凉</li>
+                  <li>手沾凉开水，取15g米饭轻轻握成椭圆</li>
+                  <li>三文鱼片放在饭团上，轻轻按压固定</li>
+                  <li>配上酱油和芥末享用</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Recipe 2 -->
+            <div class="recipe-card">
+              <div class="recipe-card-body">
+                <div class="recipe-card-emoji">🥑</div>
+                <h3>加州卷</h3>
+                <p class="text-muted">西方改良版，老少皆宜</p>
+                
+                <div class="recipe-ingredients">
+                  <h4>📝 材料</h4>
+                  <ul>
+                    <li>寿司米 150g</li>
+                    <li>海苔 1张</li>
+                    <li>蟹棒 2根</li>
+                    <li>牛油果 半个</li>
+                    <li>黄瓜 半根</li>
+                    <li>飞鱼籽 适量</li>
+                    <li>蛋黄酱 少许</li>
+                  </ul>
+                </div>
+
+                <h4>👨‍🍳 步骤</h4>
+                <ol class="recipe-steps">
+                  <li>寿司米煮熟拌醋备用</li>
+                  <li>海苔铺在竹帘上，米饭均匀铺满</li>
+                  <li>翻面让海苔朝上，放蟹棒、牛油果、黄瓜条</li>
+                  <li>卷紧切成6-8段</li>
+                  <li>顶部挤蛋黄酱，撒飞鱼籽装饰</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Recipe 3 -->
+            <div class="recipe-card">
+              <div class="recipe-card-body">
+                <div class="recipe-card-emoji">🥒</div>
+                <h3>太卷寿司</h3>
+                <p class="text-muted">配料丰富的粗卷，饱腹感强</p>
+                
+                <div class="recipe-ingredients">
+                  <h4>📝 材料</h4>
+                  <ul>
+                    <li>寿司米 200g</li>
+                    <li>海苔 1张</li>
+                    <li>火腿 1根</li>
+                    <li>蛋皮 1张</li>
+                    <li>黄瓜 半根</li>
+                    <li>腌萝卜 适量</li>
+                  </ul>
+                </div>
+
+                <h4>👨‍🍳 步骤</h4>
+                <ol class="recipe-steps">
+                  <li>寿司米煮熟拌醋</li>
+                  <li>蛋液煎成薄蛋皮切丝</li>
+                  <li>海苔铺底，铺满米饭，留1cm边缘</li>
+                  <li>放火腿丝、蛋皮丝、黄瓜条、腌萝卜</li>
+                  <li>卷紧定型，切成6段即可</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Recipe 4 -->
+            <div class="recipe-card">
+              <div class="recipe-card-body">
+                <div class="recipe-card-emoji">🌯</div>
+                <h3>手卷寿司</h3>
+                <p class="text-muted">用手拿着吃，更有趣味</p>
+                
+                <div class="recipe-ingredients">
+                  <h4>📝 材料</h4>
+                  <ul>
+                    <li>寿司米 100g</li>
+                    <li>海苔 2张</li>
+                    <li>金枪鱼罐头 适量</li>
+                    <li>生菜 2片</li>
+                    <li>胡萝卜 半根</li>
+                  </ul>
+                </div>
+
+                <h4>👨‍🍳 步骤</h4>
+                <ol class="recipe-steps">
+                  <li>寿司米煮熟拌醋备用</li>
+                  <li>海苔裁成半圆形</li>
+                  <li>从对角线卷起成锥形漏斗</li>
+                  <li>填入米饭和各类馅料</li>
+                  <li>做好后立即食用，口感最佳</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Recipe 5 -->
+            <div class="recipe-card">
+              <div class="recipe-card-body">
+                <div class="recipe-card-emoji">🍘</div>
+                <h3>稻荷寿司</h3>
+                <p class="text-muted">甜甜咸鲜，一口满足</p>
+                
+                <div class="recipe-ingredients">
+                  <h4>📝 材料</h4>
+                  <ul>
+                    <li>寿司米 150g</li>
+                    <li>油豆腐皮 6个</li>
+                    <li>酱油 2汤匙</li>
+                    <li>味醂 1汤匙</li>
+                    <li>糖 1汤匙</li>
+                    <li>清水 150ml</li>
+                  </ul>
+                </div>
+
+                <h4>👨‍🍳 步骤</h4>
+                <ol class="recipe-steps">
+                  <li>油豆腐皮用开水焯过去油</li>
+                  <li>酱油、味醂、糖、水混合煮开</li>
+                  <li>放入豆腐皮，小火煮15分钟入味</li>
+                  <li>寿司米煮熟拌醋</li>
+                  <li>豆腐皮沥干，填入米饭即可</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Tips -->
+    <section class="section" id="tips" style="background: var(--light-gray);">
+      <div class="container">
+        <div class="category-section">
+          <div class="category-header">
+            <div class="category-icon">💡</div>
+            <div>
+              <h2>寿司制作避坑指南</h2>
+              <p class="text-muted mb-0">这些实用tips帮你避开常见问题</p>
+            </div>
+          </div>
+          <div class="card-grid">
+            <div class="tip-card">
+              <div class="tip-icon">💧</div>
+              <div class="tip-content">
+                <h4>米饭太黏怎么办？</h4>
+                <p>可能原因：水量过多或煮饭时间过长。解决方法是在煮饭时减少水量，或在拌醋时加入少量米醋帮助分离米粒。下次制作时可先将米浸泡时间缩短。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">💧</div>
+              <div class="tip-content">
+                <h4>米饭太散怎么办？</h4>
+                <p>可能原因：水量不足或拌醋时机不对。解决方法是将米饭盖上保鲜膜，用微波炉加热10秒增加黏性，或重新蒸一下。拌醋时米饭要保持温热。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">🥬</div>
+              <div class="tip-content">
+                <h4>海苔变软怎么办？</h4>
+                <p>变软的海苔可以放入烤箱以100°C低温烘烤2-3分钟，或用平底锅小火烘烤片刻。保存时放入密封袋冷冻，能保持较长时间酥脆。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">🔪</div>
+              <div class="tip-content">
+                <h4>切卷寿司技巧</h4>
+                <p>切卷寿司时，刀具要沾湿再切，每切一刀用清水冲一下，防止米饭粘刀。力度要均匀，不要来回锯，用干脆利落的一刀完成切割。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">❄️</div>
+              <div class="tip-content">
+                <h4>寿司保存方法</h4>
+                <p>握寿司做好后应立即食用，不建议长时间保存。如需保存，可放入密封盒，冷藏不超过4小时，食用前可回温5分钟。含生鱼片的寿司不建议隔夜保存。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">👃</div>
+              <div class="tip-content">
+                <h4>如何判断鱼生新鲜度</h4>
+                <p>新鲜的鱼生应具有：①淡淡的海洋鲜香，无腥臭味；②色泽自然鲜亮；③按压后能快速恢复弹性；④眼睛清亮（如整条鱼）。有异味的鱼生绝对不要食用。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">🍚</div>
+              <div class="tip-content">
+                <h4>让醋饭更有光泽</h4>
+                <p>拌醋时动作要轻柔，采用"切拌"而非搅拌的方式，保持米粒完整。醋的温度以微温为佳，太冷不易被米饭吸收，太热会使米饭变糊。</p>
+              </div>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">🧊</div>
+              <div class="tip-content">
+                <h4>快速冷却米饭</h4>
+                <p>如果赶时间，可以将米饭薄薄铺在平底盘上，用电风扇吹凉。注意不要放入冰箱快速冷却，冷藏会使米饭变硬影响口感。温热的醋饭口感最好。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="section">
+      <div class="container">
+        <div class="feedback-section">
+          <h3 class="feedback-title">💬 留言提问 / 教程建议</h3>
+          <form class="feedback-form" onsubmit="handleFeedback(event)">
+            <input type="text" placeholder="您的称呼（选填）" style="padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 8px;">
+            <textarea placeholder="关于寿司教程，您有什么问题或建议？"></textarea>
+            <button type="submit" class="btn btn-primary">提交反馈</button>
+          </form>
+          <div class="feedback-list" id="feedbackList"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="about.html">关于本站</a>
+        <a href="sitemap.html">站点地图</a>
+        <a href="privacy.html">隐私协议</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <p class="footer-copyright">© 2025 SUSHI.TOP 寿司百科 · 让寿司文化触手可及</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleFeedback(e) {
+      e.preventDefault();
+      const form = e.target;
+      const inputs = form.querySelectorAll('input, textarea');
+      const content = inputs[1].value.trim();
+      const author = inputs[0].value.trim() || '匿名用户';
+      
+      if (!content) {
+        alert('请输入留言内容');
+        return;
+      }
+
+      const list = document.getElementById('feedbackList');
+      const item = document.createElement('div');
+      item.className = 'feedback-item';
+      item.innerHTML = `
+        <div class="feedback-item-header">
+          <span class="feedback-item-author">${author}</span>
+          <span class="feedback-item-time">刚刚</span>
+        </div>
+        <p class="feedback-item-content">${content}</p>
+      `;
+      
+      if (list.firstChild) {
+        list.insertBefore(item, list.firstChild);
+      } else {
+        list.appendChild(item);
+      }
+      
+      form.reset();
+      alert('感谢您的反馈！');
+    }
+  </script>
+
+  <!-- Search Modal -->
+  <div id="search-modal" onclick="if(event.target===this)closeSearch()">
+    <div class="search-modal-inner">
+      <div class="search-modal-header">
+        <span>🔍</span>
+        <input type="text" id="search-input" placeholder="搜索寿司知识..." oninput="handleSearch(this.value)">
+        <button class="search-modal-close" onclick="closeSearch()">✕</button>
+      </div>
+      <div id="search-results">
+        <div class="search-empty">输入关键词开始搜索</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/pagefind/pagefind-ui.js"></script>
+  <script>
+    let pagefindSearch;
+    async function initPagefind() {
+      try {
+        pagefindSearch = await import("/pagefind/pagefind.js");
+      } catch(e) {
+        console.log("Pagefind not available, using fallback");
+      }
+    }
+    initPagefind();
+
+    function openSearch() {
+      document.getElementById('search-modal').classList.add('active');
+      setTimeout(() => document.getElementById('search-input').focus(), 100);
+    }
+    function closeSearch() {
+      document.getElementById('search-modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSearch();
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+    });
+    async function handleSearch(query) {
+      const resultsDiv = document.getElementById('search-results');
+      if (!query.trim()) { resultsDiv.innerHTML = '<div class="search-empty">输入关键词开始搜索</div>'; return; }
+      if (pagefindSearch) {
+        try {
+          const search = await pagefindSearch.search(query);
+          const results = await Promise.all(search.results.slice(0,8).map(r => r.data()));
+          if (results.length === 0) {
+            resultsDiv.innerHTML = '<div class="search-empty">未找到相关内容</div>';
+          } else {
+            resultsDiv.innerHTML = results.map(r => 
+              '<div class="pagefind-result"><h3><a href="' + r.url + '">' + (r.meta?.title || r.url) + '</a></h3><p>' + (r.sub_results?.map(s=>s.excerpt).join(' ... ') || '') + '</p></div>'
+            ).join('');
+          }
+        } catch(e) {
+          resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+        }
+      } else {
+        resultsDiv.innerHTML = '<div class="search-empty">搜索功能加载中...</div>';
+      }
+    }
+    function translatePage(lang) {
+      const url = window.location.href;
+      const translateUrl = 'https://translate.google.com/translate?sl=zh-CN&tl=' + lang + '&u=' + encodeURIComponent(url);
+      window.open(translateUrl, '_blank');
+      document.getElementById('translateMenu').classList.remove('show');
+    }
+    // Close translate menu on outside click
+    document.addEventListener('click', function(e) {
+      const btn = document.querySelector('.translate-btn');
+      const menu = document.getElementById('translateMenu');
+      if (btn && menu && !btn.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
+
+</body>
+</html>
